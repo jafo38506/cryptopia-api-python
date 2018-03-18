@@ -82,10 +82,11 @@ class Api(object):
         return self.api_query(feature_requested='GetMarket',
                               get_parameters={'market': market})
 
-    def get_history(self, market):
+    def get_history(self, market, hours):
         """ Gets the full order history for the market (all users) """
         return self.api_query(feature_requested='GetMarketHistory',
-                              get_parameters={'market': market})
+                              get_parameters={'market': market,
+                                              'hours': hours})
 
     def get_orders(self, market):
         """ Gets the user history for the specified market """
